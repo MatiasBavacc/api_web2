@@ -9,7 +9,7 @@
 
 Desarrollamos una Api RESTful para gestionar las entidades de una cadena de librerias, de manera de que cualquier dispositivo pueda consumirla.
 
-## Despliegue del Sitio
+## Despliegue
 
 Para desplegar la api en un servidor con Apache y MySQL, sigue estos pasos:
 
