@@ -81,21 +81,21 @@ localhost/api_web2/api/libros?criterio=DESC&pagina=1&items=5&id_libreria=13&orde
 2.**Solicitar un libro**
 Para esto vamos a usar el metodo GET y la siguiente url:
 
-api_web2/api/libros/4
+localhost/api_web2/api/libros/4
 Donde 4 es el id del libro que solicitamos.
 
 3.**Borrar un libro**
 Es necesario la autenticacion con un token.
 Para eliminar un libro lo haremos a travez del metodo DELETE y la siguiente url.
 
-api_web2/api/libros/4
+localhost/api_web2/api/libros/4
 Donde 4 es el id del libro que deseamos eliminar.
 
 4.**Editar un libro**
 Es necesario la autenticacion con un token.
 Para editar un libro lo haremos a travez del metodo PUT y la siguiente url.
 
-api_web2/api/libros/4
+localhost/api_web2/api/libros/4
 Donde 4 es el id del libro que deseamos editar.
 Tambien debemos pasarle al body los siguientes campos.
 {
@@ -121,15 +121,19 @@ Tambien es necesario enviarle al body los siguientes campos.
 
 ### TOKEN ENDPOINT
 Para este punto es necesario conectarse con un usuario y contraseña.
-Para esto vamos al apartado Authorization y seleccionamos Basic Auth. 
+Para esto vamos al apartado Authorization y seleccionamos Basic Auth.
+
 -Usuario: webadmin
+
 -Contraseña: admin
 
 A travez del metodo GET y la url.
 
 localhost/api_web2/api/user/token
 Si hiciste todo bien, este devolvera un codigo similar el siguiente.
+
 "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImVtYWlsIjoiQ2FybGl0b3MiLCJyb2xlIjoiRG9taW5ndWVybyIsImlhdCI6MTczMTcyMDc1OSwiZXhwIjoxNzMxNzI0MzU5LCJTYWx1ZGlsbG8gQ29tcGHDsWVybyI6IkVzcGVyYWJhIG1hcyJ9.MceB7onEz3X1TZh2qOVavaE5shWwsHbxCLRhUmD9o8I"
+
 Este codigo vamos a utilizarlo para la authorization.
 Seleccionamos Bearer Token y pegamos el codigo anterior sin comillas.
 De esta manera podemos utilizar los enpoints con authoriation.
