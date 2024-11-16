@@ -3,8 +3,8 @@
 
     class LibroModel extends Model{
         
-        public function getBooks($id_libreria = false, $orderBy = false){
-            $sql = 'SELECT * FROM libros';
+        public function getBooks($id_libreria = false, $orderBy = false, $criterio = false, $items = false, $pagina = false){
+            $sql = 'SELECT * FROM `libros` ';
             if($id_libreria){
                 $sql .= ' WHERE `id_libreria` = ?';
             }
@@ -30,6 +30,20 @@
                         break;
                 }
             }
+
+            if($criterio == "DESC"){
+                $sql.= ' DESC';
+            }
+
+            if($items && $pagina){
+                if($items > 0 && $pagina > 0){
+                    $items = (int)$items;
+                    $pagina = (int)($pagina - 1) * $items;
+                    $sql.= " LIMIT $pagina,$items";
+                }
+            }
+
+            
             $query = $this->db->prepare($sql);
 
             if($id_libreria){
@@ -37,6 +51,7 @@
             }else{
                 $query ->execute();
             }
+
             $libros = $query->fetchAll(PDO::FETCH_OBJ);
             return $libros;
         }

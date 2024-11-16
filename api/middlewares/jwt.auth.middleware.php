@@ -10,6 +10,6 @@
                 return;
             }
             $jwt = $auth_header[1];
-            $res->user = validateJWT($jwt);
+            $res->setUser(validateJWT($jwt));
         }
     }

@@ -1,13 +1,16 @@
 <?php
-require './api/middlewares/user.php';
     class Response{
-        private $user = null;
+        private $user;
 
         public function __construct(){
-            $this->user = new User();
+            $this->user = null;
         }
         
         public function getUser(){
             return $this->user;
+        }
+
+        public function setUser($user){
+            $this->user = $user;
         }
     }

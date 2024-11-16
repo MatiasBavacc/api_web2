@@ -1,5 +1,5 @@
 <?php
-require_once './app/model/model.php';
+require_once './api/model/model.php';
 
 class LibreriaModel extends Model {
 

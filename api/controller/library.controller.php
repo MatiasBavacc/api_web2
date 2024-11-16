@@ -1,6 +1,5 @@
 <?php
-require './app/model/library.model.php'; 
-require './app/view/libreria.view.php'; 
+require './api/model/library.model.php'; 
 
 class LibreriaController {
     private $model;
@@ -8,7 +7,7 @@ class LibreriaController {
 
     public function __construct() {
         $this->model = new LibreriaModel(); 
-        $this->view = new LibreriaView();
+        $this->view = null;
     }
 
 
@@ -18,7 +17,7 @@ class LibreriaController {
 
     public function showLibraries($res) {
         $librerias = $this->model->getLibraries(); 
-        $this->view->showLibraries($librerias,$res); 
+        //$this->view->showLibraries($librerias,$res); 
     }
 
     public function addLibrary($res) {
@@ -30,20 +29,20 @@ class LibreriaController {
                 header("Location: librerias"); 
             } 
         }else {
-            $this->view->showError("Error: Todos los campos son obligatorios.",$res); 
+            //$this->view->showError("Error: Todos los campos son obligatorios.",$res); 
         }
     }
 
     public function showAddLibraryForm($res) {
-        $this->view->addLibrary($res); 
+        //$this->view->addLibrary($res); 
     }
 
     public function modifyLibrary($id,$res) {
         $libreria = $this->model->getLibrary($id); 
         if ($libreria) {
-            $this->view->modifyLibrary($libreria,$res); 
+            //$this->view->modifyLibrary($libreria,$res); 
         } else {
-            $this->view->showError("Librería no encontrada.",$res);
+           // $this->view->showError("Librería no encontrada.",$res);
         }
     }
 
@@ -55,7 +54,7 @@ class LibreriaController {
             $this->model->updateLibrary($id, $nombre, $direccion); 
             header("Location: librerias"); 
         } else {
-            $this->view->showError("Error: Todos los campos son obligatorios.",$res); 
+            //$this->view->showError("Error: Todos los campos son obligatorios.",$res); 
         }
     }
 
@@ -65,10 +64,10 @@ class LibreriaController {
                 header("Location: librerias"); 
                 exit(); 
             } else {
-                $this->view->showError("Error al eliminar la librería. Puede que no exista o ya haya sido eliminada.",$res);
+                //$this->view->showError("Error al eliminar la librería. Puede que no exista o ya haya sido eliminada.",$res);
             }
         } else {
-            $this->view->showError("Libreria eliminada.", $res);
+           //$this->view->showError("Libreria eliminada.", $res);
         }
     }
 
@@ -81,9 +80,9 @@ class LibreriaController {
         $libros = $this->model->getBooksByLibrary($id_libreria);
         $libreria = $this->model->getLibrary($id_libreria);
         if ($libros && $libreria) {
-            $this->view->showBooksByLibrary($libros, $libreria, $res); 
+            //$this->view->showBooksByLibrary($libros, $libreria, $res); 
         } else {
-            $this->view->showError("No se encontraron libros para esta librería.", $res);
+            //$this->view->showError("No se encontraron libros para esta librería.", $res);
         }
     }
     

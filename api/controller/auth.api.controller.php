@@ -37,7 +37,7 @@
                 'role' => 'admin',
                 'iat' => time(),
                 'exp' => time() + 3600,
-                'Saludo' => 'No me queme',
+                'Saludo' => 'No me queme'
             ));
             return $this->view->response($token);
         }
