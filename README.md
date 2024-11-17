@@ -2,18 +2,18 @@
 
 ## Indice
 
-- [Integrantes](#Integrantes)
-- [Despliegue](#Despliegue)
-- [Requisitos Previos](#Requisitos)
-- [Pasos para Desplegar](#Pasos)
-- [ENDPOINTS](#ENDPOINTS)
-- [Solicitar todos los libros](#1)
-- [Solicitar un libro](#2)
-- [Borrar un libro](#3)
-- [Editar un libro](#4)
-- [Agregar un libro](#5)
-- [TOKEN Endpoint](#TOKEN)
-- [Diagrama de Relacion](#DER)
+- [Integrantes](#integrantes)
+- [Despliegue](#despliegue)
+- [Requisitos Previos](#requisitos-previos)
+- [Pasos para Desplegar](#pasos-para-desplegar)
+- [ENDPOINTS](#endpoints)
+  - [Solicitar todos los libros](#1-solicitar-todos-los-libros)
+  - [Solicitar un libro](#2-solicitar-un-libro)
+  - [Borrar un libro](#3-borrar-un-libro)
+  - [Editar un libro](#4-editar-un-libro)
+  - [Agregar un libro](#5-agregar-un-libro)
+- [TOKEN Endpoint](#token-endpoint)
+- [Diagrama de Relación](#der)
 
 ## Integrantes:
  * Matias Bava (38961362)
