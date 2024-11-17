@@ -52,19 +52,19 @@ id_libro no es el unico campo de ordenamiento, se puede ordenar por cualquiera d
 
 localhost/api_web2/api/libros?orderBy=nombre_libro
 
-*Para ordenar por titulo.
+**Para ordenar por titulo.**
 
 localhost/api_web2/api/libros?orderBy=genero
 
-*Para ordenar por genero.
+**Para ordenar por genero.**
 
 localhost/api_web2/api/libros?orderBy=editorial
 
-*Para ordenar por editorial.
+**Para ordenar por editorial.**
 
 localhost/api_web2/api/libros?orderBy=id_libreria
 
-*Para ordenar por el id de la libreria.
+**Para ordenar por el id de la libreria.**
 
 **De forma predeterminada ordena ascendentemente**
 D. Para ordenar de forma Descendente lo hacemos a travez de: **criterio=DESC**
