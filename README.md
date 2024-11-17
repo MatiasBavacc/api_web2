@@ -6,13 +6,13 @@
 - [Despliegue](#despliegue)
 - [Requisitos Previos](#requisitos-previos)
 - [Pasos para Desplegar](#pasos-para-desplegar)
-- [ENDPOINTS LIBROS](#endpoints_libros)
+- [ENDPOINTS LIBROS](#endpoints-libros)
   - [Solicitar todos los libros](#1-solicitar-todos-los-libros)
   - [Solicitar un libro](#2-solicitar-un-libro)
   - [Borrar un libro](#3-borrar-un-libro)
   - [Editar un libro](#4-editar-un-libro)
   - [Agregar un libro](#5-agregar-un-libro)
-- [ENDPOINTS RESEÑAS](#endpoints_reseñas)
+- [ENDPOINTS RESEÑAS](#endpoints-reseñas)
   - [Solicitar todas las reseñas](#1-solicitar-todas-las-reseñas)
   - [Solicitar una reseña](#2-solicitar-una-reseña)
   - [Borrar una reseña](#3-borrar-una-reseña)
@@ -165,7 +165,7 @@ Tambien es necesario enviarle al body los siguientes campos.
 
 ## ENDPOINTS RESEÑAS
 
-###  **1. Solicitar todas las reseñas**
+###  1. **Solicitar todas las reseñas**
 A. Para esto vamos a utilizar el método GET y la siguiente URL:
 
 - localhost/api_web2/api/reseñas
