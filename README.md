@@ -1,5 +1,11 @@
 # Libreria
 
+## Indice
+- [Integrantes](#Integrantes)
+- [Despliegue](#Despliegue)
+- [Requisitos Previos](#RequisitosPrevios)
+- [Pasos para Desplegar](#PasosparaDesplegar)
+
 
 ## Integrantes:
  * Matias Bava (38961362)
@@ -162,6 +168,8 @@ Si hiciste todo bien, este devolvera un codigo similar el siguiente.
 Este codigo vamos a utilizarlo para la authorization.
 Seleccionamos Bearer Token y pegamos el codigo anterior sin comillas.
 De esta manera podemos utilizar los enpoints con authoriation.
+
+- [Volver al inicio](#Libreria)
 
 ## DER
 
