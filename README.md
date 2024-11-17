@@ -51,21 +51,31 @@ C. Los libros solicitados tambien pueden ordenarse de manera ascendente o desend
 localhost/api_web2/api/libros?orderBy=id_libro
 id_libro no es el unico campo de ordenamiento, se puede ordenar por cualquiera de sus campos.
 
-localhost/api_web2/api/libros?orderBy=nombre_libro
+---
+
+- localhost/api_web2/api/libros?orderBy=nombre_libro
 
 **Para ordenar por titulo.**
 
-localhost/api_web2/api/libros?orderBy=genero
+---
+
+- localhost/api_web2/api/libros?orderBy=genero
 
 **Para ordenar por genero.**
 
-localhost/api_web2/api/libros?orderBy=editorial
+---
+
+- localhost/api_web2/api/libros?orderBy=editorial
 
 **Para ordenar por editorial.**
 
-localhost/api_web2/api/libros?orderBy=id_libreria
+---
+
+- localhost/api_web2/api/libros?orderBy=id_libreria
 
 **Para ordenar por el id de la libreria.**
+
+---
 
 **De forma predeterminada ordena ascendentemente**
 
