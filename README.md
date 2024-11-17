@@ -51,16 +51,20 @@ localhost/api_web2/api/libros?orderBy=id_libro
 id_libro no es el unico campo de ordenamiento, se puede ordenar por cualquiera de sus campos.
 
 localhost/api_web2/api/libros?orderBy=nombre_libro
-Para ordenar por titulo.
+
+*Para ordenar por titulo.
 
 localhost/api_web2/api/libros?orderBy=genero
-Para ordenar por genero.
+
+*Para ordenar por genero.
 
 localhost/api_web2/api/libros?orderBy=editorial
-Para ordenar por editorial.
+
+*Para ordenar por editorial.
 
 localhost/api_web2/api/libros?orderBy=id_libreria
-Para ordenar por el id de la libreria.
+
+*Para ordenar por el id de la libreria.
 
 **De forma predeterminada ordena ascendentemente**
 D. Para ordenar de forma Descendente lo hacemos a travez de: **criterio=DESC**
@@ -77,20 +81,20 @@ items y pagina siembre van juntos, de lo contrario no hay paginacion.
 
 F. Cualquiera de todos los anteriores puede acumularse a travez de el simbolo & en cualquier orden.
 localhost/api_web2/api/libros?criterio=DESC&pagina=1&items=5&id_libreria=13&orderBy=id_libro
-
+---
 2.**Solicitar un libro**
 Para esto vamos a usar el metodo GET y la siguiente url:
 
 localhost/api_web2/api/libros/4
 Donde 4 es el id del libro que solicitamos.
-
+---
 3.**Borrar un libro**
 Es necesario la autenticacion con un token.
 Para eliminar un libro lo haremos a travez del metodo DELETE y la siguiente url.
 
 localhost/api_web2/api/libros/4
 Donde 4 es el id del libro que deseamos eliminar.
-
+---
 4.**Editar un libro**
 Es necesario la autenticacion con un token.
 Para editar un libro lo haremos a travez del metodo PUT y la siguiente url.
@@ -105,7 +109,7 @@ Tambien debemos pasarle al body los siguientes campos.
     "id_libreria": 21
 }
 Tener en cuenta es que todos los campos son obligatorios.
-
+---
 5.**Agregar un libro**
 Es necesario la autenticacion con un token.
 Para crear un nuevo libro es necesario utilizar el metodo POST y la siguiente url.
