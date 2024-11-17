@@ -1,11 +1,19 @@
 # Libreria
 
 ## Indice
+
 - [Integrantes](#Integrantes)
 - [Despliegue](#Despliegue)
-- [Requisitos Previos](#RequisitosPrevios)
-- [Pasos para Desplegar](#PasosparaDesplegar)
-
+- [Requisitos Previos](#Requisitos)
+- [Pasos para Desplegar](#Pasos)
+- [ENDPOINTS](#ENDPOINTS)
+- [Solicitar todos los libros](#1)
+- [Solicitar un libro](#2)
+- [Borrar un libro](#3)
+- [Editar un libro](#4)
+- [Agregar un libro](#5)
+- [TOKEN Endpoint](#TOKEN)
+- [Diagrama de Relacion](#DER)
 
 ## Integrantes:
  * Matias Bava (38961362)
@@ -38,11 +46,11 @@ Edita config.php para ajustar las credenciales de la base de datos.
 4. **Configurar Conexión**
 Acceder al Sitio: Visita http://localhost/api_web2 .
 
-### ENDPOINTS
+## ENDPOINTS
 
 Para consumir la API podemos utilizar los siguientes endpoints.
 
-1. **Solicitar todos los libros**
+### 1. **Solicitar todos los libros**
 A. Para esto vamos a utilizar el metodo GET y la siguiente url: 
 
 localhost/api_web2/api/libros
@@ -57,31 +65,31 @@ C. Los libros solicitados tambien pueden ordenarse de manera ascendente o desend
 localhost/api_web2/api/libros?orderBy=id_libro
 id_libro no es el unico campo de ordenamiento, se puede ordenar por cualquiera de sus campos.
 
---
+---
 
 - localhost/api_web2/api/libros?orderBy=nombre_libro
 
 **Para ordenar por titulo.**
 
---
+---
 
 - localhost/api_web2/api/libros?orderBy=genero
 
 **Para ordenar por genero.**
 
---
+---
 
 - localhost/api_web2/api/libros?orderBy=editorial
 
 **Para ordenar por editorial.**
 
---
+---
 
 - localhost/api_web2/api/libros?orderBy=id_libreria
 
 **Para ordenar por el id de la libreria.**
 
---
+---
 
 **De forma predeterminada ordena ascendentemente**
 
@@ -102,7 +110,7 @@ localhost/api_web2/api/libros?criterio=DESC&pagina=1&items=5&id_libreria=13&orde
 
 ---
 
-2. **Solicitar un libro**
+### 2. **Solicitar un libro**
 Para esto vamos a usar el metodo GET y la siguiente url:
 
 localhost/api_web2/api/libros/4
@@ -110,7 +118,7 @@ Donde 4 es el id del libro que solicitamos.
 
 ---
 
-3. **Borrar un libro**
+### 3. **Borrar un libro**
 Es necesario la autenticacion con un token.
 Para eliminar un libro lo haremos a travez del metodo DELETE y la siguiente url.
 
@@ -119,7 +127,7 @@ Donde 4 es el id del libro que deseamos eliminar.
 
 ---
 
-4. **Editar un libro**
+### 4. **Editar un libro**
 Es necesario la autenticacion con un token.
 Para editar un libro lo haremos a travez del metodo PUT y la siguiente url.
 
@@ -136,7 +144,7 @@ Tener en cuenta es que todos los campos son obligatorios.
 
 ---
 
-5.**Agregar un libro**
+### 5.**Agregar un libro**
 Es necesario la autenticacion con un token.
 Para crear un nuevo libro es necesario utilizar el metodo POST y la siguiente url.
 
@@ -149,7 +157,7 @@ Tambien es necesario enviarle al body los siguientes campos.
     "id_libreria": 1112
 }
 
-### TOKEN ENDPOINT
+## TOKEN ENDPOINT
 
 Para este punto es necesario conectarse con un usuario y contraseña.
 Para esto vamos al apartado Authorization y seleccionamos Basic Auth.
