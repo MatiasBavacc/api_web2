@@ -6,12 +6,18 @@
 - [Despliegue](#despliegue)
 - [Requisitos Previos](#requisitos-previos)
 - [Pasos para Desplegar](#pasos-para-desplegar)
-- [ENDPOINTS](#endpoints)
+- [ENDPOINTS LIBROS](#endpoints_libros)
   - [Solicitar todos los libros](#1-solicitar-todos-los-libros)
   - [Solicitar un libro](#2-solicitar-un-libro)
   - [Borrar un libro](#3-borrar-un-libro)
   - [Editar un libro](#4-editar-un-libro)
   - [Agregar un libro](#5-agregar-un-libro)
+- [ENDPOINTS RESEÑAS](#endpoints_reseñas)
+  - [Solicitar todas las reseñas](#1-solicitar-todas-las-reseñas)
+  - [Solicitar una reseña](#2-solicitar-una-reseña)
+  - [Borrar una reseña](#3-borrar-una-reseña)
+  - [Editar una reseña](#4-editar-una-reseña)
+  - [Agregar una reseña](#5-agregar-una-reseñas)
 - [TOKEN Endpoint](#token-endpoint)
 - [Diagrama de Relación](#der)
 
@@ -46,7 +52,7 @@ Edita config.php para ajustar las credenciales de la base de datos.
 4. **Configurar Conexión**
 Acceder al Sitio: Visita http://localhost/api_web2 .
 
-## ENDPOINTS
+## ENDPOINTS LIBROS
 
 Para consumir la API podemos utilizar los siguientes endpoints.
 
@@ -113,7 +119,7 @@ localhost/api_web2/api/libros?criterio=DESC&pagina=1&items=5&id_libreria=13&orde
 ### 2. **Solicitar un libro**
 Para esto vamos a usar el metodo GET y la siguiente url:
 
-localhost/api_web2/api/libros/4
+-localhost/api_web2/api/libros/4
 Donde 4 es el id del libro que solicitamos.
 
 ---
@@ -122,7 +128,7 @@ Donde 4 es el id del libro que solicitamos.
 Es necesario la autenticacion con un token.
 Para eliminar un libro lo haremos a travez del metodo DELETE y la siguiente url.
 
-localhost/api_web2/api/libros/4
+-localhost/api_web2/api/libros/4
 Donde 4 es el id del libro que deseamos eliminar.
 
 ---
@@ -131,7 +137,7 @@ Donde 4 es el id del libro que deseamos eliminar.
 Es necesario la autenticacion con un token.
 Para editar un libro lo haremos a travez del metodo PUT y la siguiente url.
 
-localhost/api_web2/api/libros/4
+-localhost/api_web2/api/libros/4
 Donde 4 es el id del libro que deseamos editar.
 Tambien debemos pasarle al body los siguientes campos.
 {
@@ -148,13 +154,110 @@ Tener en cuenta es que todos los campos son obligatorios.
 Es necesario la autenticacion con un token.
 Para crear un nuevo libro es necesario utilizar el metodo POST y la siguiente url.
 
-localhost/api_web2/api/libros/
+-localhost/api_web2/api/libros/
 Tambien es necesario enviarle al body los siguientes campos.
 {
     "nombre_libro": "Nuevo nombre",
     "genero": "Genero del libro",
     "editorial": "Editorial del libro",
     "id_libreria": 1112
+}
+
+## ENDPOINTS RESEÑAS
+
+###  **1. Solicitar todas las reseñas**
+A. Para esto vamos a utilizar el método GET y la siguiente URL:
+
+- localhost/api_web2/api/reseñas
+
+B. En este endpoint se puede filtrar por el ID del libro de la siguiente manera:
+
+- localhost/api_web2/api/reseñas?id_libro=5
+Donde "5" es el ID del libro cuyas reseñas quieres solicitar.
+
+C. Las reseñas solicitadas también pueden ordenarse de manera ascendente o descendente mediante orderBy:
+
+- localhost/api_web2/api/reseñas?orderBy=nombre
+**Para ordenar por nombre.**
+
+
+- localhost/api_web2/api/reseñas?orderBy=apellido
+**Para ordenar por apellido.**
+
+- localhost/api_web2/api/reseñas?orderBy=comentario
+**Para ordenar por comentario.**
+
+- localhost/api_web2/api/reseñas?orderBy=id_libro
+**Para ordenar por ID del libro.**
+
+**De forma predeterminada, ordena ascendentemente.**
+
+D. Para ordenar de forma descendente lo hacemos a través de: criterio=DESC
+
+- localhost/api_web2/api/reseñas?orderBy=nombre&criterio=DESC
+Esto organizará todas las reseñas de forma descendente según el campo nombre.
+
+E. Si en nuestra solicitud tenemos demasiados elementos, podemos paginarlos de la siguiente manera:
+
+- localhost/api_web2/api/reseñas?pagina=1&items=10
+
+Estamos especificando la cantidad de elementos por página. A la página le asignamos el número en el que queremos posicionarnos.
+Nota: Los parámetros items y pagina siempre van juntos; de lo contrario, no hay paginación.
+
+F. Todos los parámetros anteriores pueden acumularse mediante el símbolo & en cualquier orden:
+
+- localhost/api_web2/api/reseñas?criterio=DESC&pagina=1&items=10&id_libro=5&orderBy=nombre
+
+---
+
+###  2. **Solicitar una reseña**
+Para esto vamos a usar el método GET y la siguiente URL:
+
+- localhost/api_web2/api/reseñas/3
+Donde "3" es el ID de la reseña que solicitamos.
+
+---
+
+### 3. **Borrar una reseña**
+Es necesaria la autenticación con un token.
+Para eliminar una reseña, usaremos el método DELETE y la siguiente URL:
+
+- localhost/api_web2/api/reseñas/3
+Donde "3" es el ID de la reseña que queremos eliminar.
+
+---
+
+### 4. **Editar una reseña**
+Es necesaria la autenticación con un token.
+Para editar una reseña, usaremos el método PUT y la siguiente URL:
+
+- localhost/api_web2/api/reseñas/3
+Donde "3" es el ID de la reseña que queremos editar.
+Debemos pasarle al body los siguientes campos:
+
+{
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "comentario": "Excelente libro",
+    "id_libro": 5
+}
+
+Nota: Todos los campos son obligatorios.
+
+---
+
+### 5. **Agregar una reseña**
+Es necesaria la autenticación con un token.
+Para crear una nueva reseña, usaremos el método POST y la siguiente URL:
+
+- localhost/api_web2/api/reseñas
+También es necesario enviarle al body los siguientes campos:
+
+{
+    "nombre": "Carla",
+    "apellido": "Gómez",
+    "comentario": "Recomendado 100%",
+    "id_libro": 7
 }
 
 ## TOKEN ENDPOINT
@@ -168,7 +271,7 @@ Para esto vamos al apartado Authorization y seleccionamos Basic Auth.
 
 A travez del metodo GET y la url.
 
-localhost/api_web2/api/user/token
+- localhost/api_web2/api/user/token
 Si hiciste todo bien, este devolvera un codigo similar el siguiente.
 
 "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImVtYWlsIjoiQ2FybGl0b3MiLCJyb2xlIjoiRG9taW5ndWVybyIsImlhdCI6MTczMTcyMDc1OSwiZXhwIjoxNzMxNzI0MzU5LCJTYWx1ZGlsbG8gQ29tcGHDsWVybyI6IkVzcGVyYWJhIG1hcyJ9.MceB7onEz3X1TZh2qOVavaE5shWwsHbxCLRhUmD9o8I"
