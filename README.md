@@ -139,15 +139,17 @@ Donde 4 es el id del libro que deseamos eliminar.
 Es necesario la autenticacion con un token.
 Para editar un libro lo haremos a travez del metodo PUT y la siguiente url.
 
--localhost/api_web2/api/libros/4
+- localhost/api_web2/api/libros/4
 Donde 4 es el id del libro que deseamos editar.
 Tambien debemos pasarle al body los siguientes campos.
+
 {
     "nombre_libro": "El Alquimista",
     "genero": "Ficción",
     "editorial": "Planeta",
     "id_libreria": 21
 }
+
 Tener en cuenta es que todos los campos son obligatorios.
 
 ---
@@ -156,8 +158,9 @@ Tener en cuenta es que todos los campos son obligatorios.
 Es necesario la autenticacion con un token.
 Para crear un nuevo libro es necesario utilizar el metodo POST y la siguiente url.
 
--localhost/api_web2/api/libros/
+- localhost/api_web2/api/libros/
 Tambien es necesario enviarle al body los siguientes campos.
+
 {
     "nombre_libro": "Nuevo nombre",
     "genero": "Genero del libro",
