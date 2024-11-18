@@ -178,16 +178,20 @@ Donde "5" es el ID del libro cuyas reseñas quieres solicitar.
 C. Las reseñas solicitadas también pueden ordenarse de manera ascendente o descendente mediante orderBy:
 
 - localhost/api_web2/api/reseñas?orderBy=nombre
+
 **Para ordenar por nombre.**
 
 
 - localhost/api_web2/api/reseñas?orderBy=apellido
+
 **Para ordenar por apellido.**
 
 - localhost/api_web2/api/reseñas?orderBy=comentario
+
 **Para ordenar por comentario.**
 
 - localhost/api_web2/api/reseñas?orderBy=id_libro
+
 **Para ordenar por ID del libro.**
 
 **De forma predeterminada, ordena ascendentemente.**
