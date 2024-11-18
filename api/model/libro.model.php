@@ -31,10 +31,12 @@
                 }
             }
 
-            if($criterio == "DESC"){
-                $sql.= ' DESC';
+            if($orderBy){
+                if($criterio == "DESC"){
+                    $sql.= ' DESC';
+                }
             }
-
+            
             if($items && $pagina){
                 if($items > 0 && $pagina > 0){
                     $items = (int)$items;

@@ -30,9 +30,10 @@
                         break;
                 }
             }
-
-            if($criterio == "DESC"){
-                $sql.= ' DESC';
+            if($orderBy){
+                if($criterio == "DESC"){
+                    $sql.= ' DESC';
+                }
             }
 
             if($items && $pagina){
