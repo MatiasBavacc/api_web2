@@ -63,11 +63,11 @@
             return $libro;
         }
 
-        public function deleteBook($id){
+        /* public function deleteBook($id){
             $query = $this->db->prepare("DELETE FROM `libros` WHERE `id_libro` = ?");
             $query ->execute([$id]);
             return $query;
-        }
+        } */
 
         public function addBook($nombre,$genero,$editorial,$id_libreria){
             $query = $this->db->prepare("INSERT INTO libros (nombre_libro,genero,editorial,id_libreria) VALUES (?,?,?,?)");
@@ -95,5 +95,18 @@
             return $libro->id_libro;
         }
 
+        public function deleteBook($id) {
+            $this->deleteReseñasByLibro($id);
+            
+            $query = $this->db->prepare("DELETE FROM libros WHERE id_libro = ?");
+            $query->execute([$id]);
+            return $query->rowCount();
+        }
+
+        public function deleteReseñasByLibro($libroId) {
+            $query = $this->db->prepare("DELETE FROM reseñas WHERE id_libro = ?");
+            $query->execute([$libroId]);
+            return $query->rowCount();
+        }
 
     }

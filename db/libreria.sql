@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2024 a las 00:37:54
+-- Tiempo de generación: 18-11-2024 a las 01:23:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -64,9 +64,6 @@ CREATE TABLE `libros` (
 --
 
 INSERT INTO `libros` (`id_libro`, `nombre_libro`, `genero`, `editorial`, `id_libreria`) VALUES
-(1, 'El Alquimista', 'Ficción', 'Planeta', 12),
-(2, 'Los años de peregrinación del chico sin color', 'Ficción', 'Tusquets', 13),
-(3, 'Cien años de soledad', 'Realismo mágico', 'Sudamericana', 14),
 (4, '1984', 'Ciencia ficción', 'Secker & Warburg', 15),
 (5, 'Crimen y castigo', 'Ficción', 'Penguin Classics', 16),
 (6, 'Don Quijote de la Mancha', 'Clásico', 'Francisco de Robles', 17),
@@ -74,6 +71,34 @@ INSERT INTO `libros` (`id_libro`, `nombre_libro`, `genero`, `editorial`, `id_lib
 (8, 'Orgullo y prejuicio', 'Romántico', 'T. Egerton', 13),
 (9, 'El retrato de Dorian Gray', 'Ficción', 'Lippincott\'s Monthly Magazine', 14),
 (10, 'La sombra del viento', 'Ficción', 'Planeta', 15);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reseñas`
+--
+
+CREATE TABLE `reseñas` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(80) NOT NULL,
+  `apellido` varchar(80) NOT NULL,
+  `comentario` varchar(255) NOT NULL,
+  `id_libro` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `reseñas`
+--
+
+INSERT INTO `reseñas` (`id`, `nombre`, `apellido`, `comentario`, `id_libro`) VALUES
+(31, 'Marcelo', 'Clavar', 'Muy buen libro.', 4),
+(32, 'Marcelo', 'Clavar', 'Muy buen libro.', 4),
+(33, 'Marcelo', 'Clavar', 'Muy buen libro.', 4),
+(34, 'Marcelo', 'Clavar', 'Muy buen libro.', 4),
+(35, 'Marcelo', 'Clavar', 'Muy buen libro.', 5),
+(36, 'Marcelo', 'Clavar', 'Muy buen libro.', 5),
+(37, 'Marcelo', 'Clavar', 'Muy buen libro.', 5),
+(38, 'Marcelo', 'Clavar', 'Muy buen libro.', 5);
 
 -- --------------------------------------------------------
 
@@ -112,6 +137,13 @@ ALTER TABLE `libros`
   ADD KEY `id_libreria` (`id_libreria`);
 
 --
+-- Indices de la tabla `reseñas`
+--
+ALTER TABLE `reseñas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_libro` (`id_libro`);
+
+--
 -- Indices de la tabla `user`
 --
 ALTER TABLE `user`
@@ -132,7 +164,13 @@ ALTER TABLE `libreria`
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT de la tabla `reseñas`
+--
+ALTER TABLE `reseñas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
@@ -149,6 +187,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `libros`
   ADD CONSTRAINT `libros_ibfk_1` FOREIGN KEY (`id_libreria`) REFERENCES `libreria` (`id_libreria`);
+
+--
+-- Filtros para la tabla `reseñas`
+--
+ALTER TABLE `reseñas`
+  ADD CONSTRAINT `reseñas_ibfk_1` FOREIGN KEY (`id_libro`) REFERENCES `libros` (`id_libro`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

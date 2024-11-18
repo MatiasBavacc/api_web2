@@ -1,7 +1,7 @@
 <?php
-    require './api/model/libro.model.php';
-    require './api/view/json.view.php';
-    require './api/controller/library.controller.php';
+    require_once './api/model/libro.model.php';
+    require_once './api/view/json.view.php';
+    require_once './api/controller/library.controller.php';
     class LibroApiController{
         private $model;
         private $view;
@@ -62,8 +62,8 @@
         public function delete($request, $response){
             if($response->getUser()!=null){
                 $id = $request->getParams()->id;
-                $book = $this->model->getBook($id);
-                if($book){
+                $reseña = $this->model->getBook($id);
+                if($reseña){
                     $this->model->deleteBook($id);
                     return $this->view->response("El libro con el id $id se elimino con exito.");
                 }
@@ -146,5 +146,5 @@
             }
             return $this->view->response("Fallo la authorization", 401);
         }
-
     }
+?>
