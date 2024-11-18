@@ -59,16 +59,18 @@ Para consumir la API podemos utilizar los siguientes endpoints.
 ### 1. **Solicitar todos los libros**
 A. Para esto vamos a utilizar el metodo GET y la siguiente url: 
 
-localhost/api_web2/api/libros
+- localhost/api_web2/api/libros
 
 B. En este enpoint se puede filtrar por el id de cada libreria de la siguiente manera:
 
-localhost/api_web2/api/libros?id_libreria=12
+- localhost/api_web2/api/libros?id_libreria=12
+
 Donde "12" es el id de la libreria que queres solicitar.
 
 C. Los libros solicitados tambien pueden ordenarse de manera ascendente o desendente mediente orderBy:
 
-localhost/api_web2/api/libros?orderBy=id_libro
+- localhost/api_web2/api/libros?orderBy=id_libro
+
 id_libro no es el unico campo de ordenamiento, se puede ordenar por cualquiera de sus campos.
 
 ---
