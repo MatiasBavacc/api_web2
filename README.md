@@ -17,7 +17,7 @@
   - [Solicitar una reseña](#2-solicitar-una-reseña)
   - [Borrar una reseña](#3-borrar-una-reseña)
   - [Editar una reseña](#4-editar-una-reseña)
-  - [Agregar una reseña](#5-agregar-una-reseñas)
+  - [Agregar una reseña](#5-agregar-una-reseña)
 - [TOKEN Endpoint](#token-endpoint)
 - [Diagrama de Relación](#der)
 
@@ -150,7 +150,7 @@ Tener en cuenta es que todos los campos son obligatorios.
 
 ---
 
-### 5.**Agregar un libro**
+### 5. **Agregar un libro**
 Es necesario la autenticacion con un token.
 Para crear un nuevo libro es necesario utilizar el metodo POST y la siguiente url.
 
